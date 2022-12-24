@@ -15,16 +15,14 @@ function autofillAppointmentForm() {
   localStorage.removeItem("clickedBooking");
   var data = JSON.parse(str) || {};
   if (data.category) {
-    $(".bookly-table .bookly-form-group:nth-child(1) select").prop(
-      "value",
-      data.category
-    );
+    var $el1 = $(".bookly-table .bookly-form-group:nth-child(1) select")
+    $el1.prop("value", data.category)
+    $el1.change()
   }
   if (data.service) {
-    $(".bookly-table .bookly-form-group:nth-child(2) select").prop(
-      "value",
-      data.service
-    );
+    var $el2 = $(".bookly-table .bookly-form-group:nth-child(2) select")
+    $el2.prop("value", data.service)
+    $el2.change()
   }
 }
 
